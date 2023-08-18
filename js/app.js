@@ -375,6 +375,13 @@ function messgageSender(message) {
     .then(response => response.json())
     .then(data => {
       console.log('Message sent');
+      document.forms["myForm"]["name"].value = "";
+      document.forms["myForm"]["email"].value = "";
+      document.forms["myForm"]["subject"].value = "";
+      document.forms["myForm"]["comments"].value = "";
+      
+      document.getElementById('error-msg').innerHTML = "<div class='alert alert-success'>Xabaringiz yuborildi!</div>";
+      fadeIn();
     })
     .catch(error => {
       console.error('Error sending message:', error);
